@@ -1,0 +1,88 @@
+<div class="content">
+
+  <div class="tabbar">
+    <div class="tab border">
+      <img src="../assets/icon/courses.svg" alt="">
+      <span class="bold courses-detail">{{courses.length}}</span>Courses
+    </div>
+    <div class="tab">
+      <img src="../assets/icon/classes.svg" alt="">
+      <span class="bold classes-detail">{{courses.length}}</span>Classes
+    </div>
+  </div>
+
+  <div class="result" *ngIf="courses.length">
+    <div class="left-result num">
+      Showing {{courses.length}} of {{courses.length}} courses
+    </div>
+    <div class="right-result">
+      Sort By :
+      <select name="course" class="bold dark" id="course">
+        <option value="Course Name">Course Name</option>
+      </select>
+      <img style="margin-left: 24px;" src="../../assets/icon/sort.svg">
+    </div>
+  </div>
+  
+  <div class="card-display">
+    <div *ngFor="let course of courses">
+      <div  class="card ">
+        <img [src]="course.image" alt="" class="card-img">
+        <div class="details">
+          <div class="space-between mb-7">
+            <p class="detail-heading bold">{{ course.title }}</p>
+            <img src="/assets/icon/favourite.svg">
+          </div>
+    
+          <div class="sub-info">
+            <p class="mb-7">{{ course.subject }} {{ course.grade }}<span class="gcolor">{{ course.grade_change > 0 ? '+' :
+                ' ' }}:
+                {{course.grade_change}}
+              </span></p>
+            <p class="mb-18">
+              <ng-container *ngIf="course.units > 0">
+                <span class="dark bold">{{ course.units }}</span>
+                Units;
+                <span class="dark bold">{{ course.lesson }}</span>
+                lessons;
+                <span class="dark bold">{{ course.topics }}</span>
+                topics
+              </ng-container>
+            </p>
+          </div>
+    
+          <div class="teacher-info">
+            <div class="space-between">
+              <select name="teacher-detail" class="teacher">
+                <option selected *ngIf="course.classes.length<=0" >No Classes</option>
+                <option selected *ngIf="course.classes.length == this.data.total_classes">All Classes</option>
+                <ng-container *ngIf="course.classes.length >0">
+                  <option [selected]="isFirst && course.classes.length != data.total_classes" *ngFor="let cls of course.classes; first as isFirst">
+                    {{cls}}
+                  </option>
+                </ng-container>
+              </select>
+            </div>
+          </div>
+    
+          <div class="course-info">
+            <ng-container *ngIf="course.classes.length > 0">
+              <span id="cs">{{ course.students }} Students</span>
+            </ng-container>
+            <ng-container *ngIf="course.classes.length > 0 && course.start_date !== ''">
+              <span>{{ course.start_date }} {{ course.end_date }}</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="card-icons">
+          <img src="../../assets/icon/preview.svg" alt="">
+          <img src="../../assets/icon/manage course.svg" alt="">
+          <img src="../../assets/icon/grade submissions.svg" alt="">
+          <img src="../../assets/icon/reports.svg" alt="">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</div>

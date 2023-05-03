@@ -1,0 +1,112 @@
+@import "/src/app/styles/colores.scss";
+
+#hamburger-list{
+    cursor: pointer;
+    padding-left: 32px;
+    height: 100%;
+    img{
+        width: 32px;
+        height: 32px;
+        height: 100%;
+    }
+    #verticle-navbar {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0s, 0s, 0.2s;
+    }
+    .verticle-nav {
+        // height: 288px;
+        visibility:hidden;
+        opacity: 0;
+        z-index: 2;
+        position: absolute;
+        transform: translateY(-3em);
+        transition: all 0.3s ease 0s, visibility 0s linear 0.05s, z-index 0.3s linear 0.01s;
+
+        width: 280px;
+        box-shadow: 0px 13px 20px #0000003D;
+        background-color: $color8;
+        top: 59px;
+        right: 16px;   
+        // display: none; 
+        border-radius: 2px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                margin: 0;
+                display: block;
+                // height: 18px;
+                padding: 15px 24px 15px 16px;
+                div {
+                    a {
+                        font-size: 14px;
+                        color: $color11;
+                        text-decoration: none;
+                    }
+                }
+                ul {
+                    display: none;
+                }
+            }
+            .selected {
+                background-color: $color14;
+                // height: 66px;
+                padding-bottom: 0;
+                div {
+                    padding-bottom: 15px;
+                    div {
+                        transform: rotate(180deg);
+                    }
+                }
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    display: block;
+
+                    li {
+                        margin: 0;
+                        display: block;
+                        height: 50px;
+                        padding: 15px 24px 15px 16px;
+                        a {
+                            font-size: 14px;
+                            color: $color11;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .hamburger-item { 
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    div {
+                        // display: block;
+                        // transform: rotate(180deg);
+                        padding: 0;
+                        width: 12px;
+                        height: 12px;
+                        background-image: url("../../assets/icon/arrow-down.svg");
+                        background-size: 12px;
+                        background-position: top right;
+                        background-repeat: no-repeat;
+                        filter: invert(42%) sepia(8%) saturate(2891%) hue-rotate(103deg) brightness(91%) contrast(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px){
+    #hamburger-list{
+        display: none;
+    }
+}
+

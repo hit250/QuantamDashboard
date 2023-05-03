@@ -1,0 +1,54 @@
+<li id="hamburger-list" (click)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <a href="#" id="hamburger-btn">
+      <img src="../assets/icon/hamburger-menu.svg" alt="" srcset="">
+    </a>
+    <div class="verticle-nav" [attr.id]="isin ? 'verticle-navbar' : null">
+      <ul class="verticle-ul">
+        <li>
+          <div>
+            <a href="#">DASHBOARD</a>
+          </div>
+        </li>
+        <li class="hamburger-item" #ref1 (click)="onItemClick(ref1)">
+          <div>
+            <a href="#">CONTENT</a>
+            <div></div>
+          </div>
+          <ul class="sub-nav" >
+            <li><a href="#"> COURSE CATALOG </a></li>
+            <!-- <li><a href="#"> COURSE CATALOG </a></li> -->
+          </ul>
+        </li>
+        <li class="hamburger-item" #ref2 (click)="onItemClick(ref2)">
+          <div>
+            <a href="#">USERS</a>
+            <div></div>
+          </div>
+          <ul class="sub-nav" >
+            <li><a href="#"> COURSE CATALOG </a></li>
+            <li><a href="#"> COURSE CATALOG </a></li>
+          </ul>
+        </li>
+        <li class="hamburger-item" #ref3 (click)="onItemClick(ref3)">
+          <div>
+            <a href="#">REPORT</a>
+            <div></div>
+          </div>
+          <ul class="sub-nav" >
+            <li><a href="#"> COURSE CATALOG </a></li>
+            <li><a href="#"> COURSE CATALOG </a></li>
+          </ul>
+        </li>
+        <li class="hamburger-item" #ref4 (click)="onItemClick(ref4)">
+          <div>
+            <a href="#">ADMIN</a>
+            <div></div>
+          </div>
+          <ul class="sub-nav"  >
+            <li><a href="#"> COURSE CATALOG </a></li>
+            <li><a href="#"> COURSE CATALOG </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</li>

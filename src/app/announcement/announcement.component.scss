@@ -1,0 +1,121 @@
+@import "/src/app/styles/colores.scss";
+
+
+.announcement-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 32px;
+    height: 100%;
+    img{
+        cursor: pointer;
+        
+    }
+    .badge2{
+        position:absolute;
+        width: 17px;
+        height: 18px;
+        font-size: 12px;
+        background-color: $color10;
+        color: $color8;
+        border-radius: 10px;
+        padding-top: 1.5px;
+        right: -12px;
+        top: 6px;
+        
+    }
+    .announcementArea {
+        position: absolute;
+        width: 315px;
+        height: max-content;
+        max-height: 582px;
+        right: 0;
+        color: $color1;
+        font-size: 14px;
+        background-color: $color8;
+        box-shadow: 0px 3px 6px $color18;
+        z-index: 1;
+        transform: scaleY(0);
+        transition-delay: 0s, 0s, 0.2s;
+        top: 55px;
+        left: -500%;
+        overflow-y: scroll;
+    
+        .announcements {
+            max-height: 534px;
+            
+
+            .announcement {
+                background-color: $color19;
+                padding: 16px;
+
+                .announcementCreater {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 8px;
+                    font-size: 12px;
+    
+                    i{
+                        width: 15px;
+                        float: right;
+                        color:$color4;
+                    }
+                    span {
+                        color: $color2;
+                    }
+                }
+                .announcementText{
+                    padding-bottom: 8px;
+                    text-align: left;
+                }
+                .announcementInfo{
+                    font-size: 12px;
+                    color: $color2;
+                    text-align: left;
+
+                    .dateTime{
+                        text-align:right;
+                    }
+                }
+            }
+
+            
+            .unread {
+                background-color: $color19;
+            }
+            .read{
+                background-color: $color19;
+            }
+        }
+
+        .announcementBtns{
+            height: 48px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 1px 6px $color18;
+            border-radius: 0px 0px 2px 2px;
+            opacity: 1;
+            background-color: white;
+        
+            .right-border{
+                border-right: 1px solid $color1;
+            }
+            .announcementBtn{
+                cursor: pointer;
+                width: 50%;
+                text-align: center;
+                color: $color4;
+                padding: 6px;
+                background-color: aliceblue;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 861px) {
+    .announcementArea{
+        right: 71px;
+    }
+}

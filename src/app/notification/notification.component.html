@@ -1,0 +1,27 @@
+<li class="badge-container alert-icon" (click)="shownotification()" (mouseleave)="hidenotification()">
+    <img style="height: 24px; width: 21px;" src="/assets/icon/alerts.svg" alt="">
+    <span class="badge1">
+        2
+    </span>
+    <div class="notificationArea" >
+        <div class="notifications">
+    
+            <div class="notification" *ngFor="let notification of notifications">
+                <div class="notificationContent">
+                    <p class="text">{{notification.title}}</p>
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div>
+                <p class="notificationInfo">
+                    <span>Course : </span> {{notification.Course}}
+                </p>
+                <p class="dateTime">
+                    {{notification.date}}{{notification.time}}
+                </p>
+            </div>
+        </div>
+        <div class="notificationBtn">
+            Show All
+        </div>
+    </div>
+
+</li>
